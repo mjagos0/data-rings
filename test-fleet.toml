@@ -1,0 +1,45 @@
+pem_key = "REDACTED"
+go_version = "1.25.7"
+aws_key_pair = "eu-fr-1"
+
+[monitoring]
+  enabled = false
+  loki_url = ""
+  metrics_port = ":9100"
+
+[[groups]]
+  name = "test-ring"
+  private_key = "256569bb655f7f1f82e8087664f9a6702c3c82a50719989b5d29b523d66bbd1e61a3df842b977c14e63135b976d8d2b258806d28155f9312c8ac21a80299e97a"
+
+[[groups]]
+  name = "na-ring"
+  private_key = "24ad98c6c99bb08fd81d56ae31048c47f569b0c5006e29ac7af865c7d47667157a2dc4aa1a342370584b1e44dd65bc23117cb30de3f2d065adacd9023f5b2252"
+
+[[groups]]
+  name = "eu-ring"
+  private_key = "1372ffc7c74c73a46ab40288f9a4be6dfcbd7407ee8f694148c5d6b2b34dc32566a0553b7a26bf2ad534f149add293d47eb7e4935b66812b7307fa4e48e5cc8c"
+
+[[groups]]
+  name = "tokyo-ring"
+  private_key = "a2f85b9d3e21d47eec9b2180afe165878142ac564fe5e5f9ac5f88ddb9f6000f5ef398fee56ea2fcae6f752fbdc061dd5ac2d63a3eb338486f170d6db427cf0e"
+
+[[groups]]
+  name = "sydney-ring"
+  private_key = "da9a31ad559587e910bc22cf69c152d7242c95bd0849b64fcf552cb043c188a4bec6559e9715b31e7e43c170b17d7297f6d531b030b086de79874f883b3352b3"
+
+[[instances]]
+  name = "eu-fr-1-1"
+  aws_name = "eu-fr-1-1"
+  region = "eu-central-1"
+  ipv4 = "3.122.46.153"
+  ssh_user = "admin"
+  initialized = true
+  is_bootstrap = true
+  static_ip = true
+  groups = ["test-ring"]
+  founder_of = ["test-ring"]
+  peer_identity_record = "2ee359b2582b65b453511e90d9c14599cdd7a8de"
+  local = false
+  api_port = 0
+  log_file = ""
+  data_dir = ""

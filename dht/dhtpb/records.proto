@@ -1,0 +1,20 @@
+syntax = "proto3";
+package dhtpb;
+option go_package = "github.com/mjagos0/datarings/dht/dhtpb";
+
+message SignedRecord {
+  bytes data = 1;
+  bytes pubkey = 2;
+  bytes signature = 3;
+}
+
+message ProviderRecord {
+  bytes content_hash = 1;
+  bytes provider = 2;
+}
+
+message ProviderRecordList {
+  repeated ProviderRecord providers = 1;
+
+  repeated int64 timestamps = 2;
+}
